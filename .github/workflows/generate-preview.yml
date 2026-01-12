@@ -32,7 +32,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git status --porcelain | grep -q resume-preview.png; then
             git add resume-preview.png
-            git commit -m "chore: generate resume-preview.png from resume.pdf"
+            git commit -m "chore: generate resume-preview.png from AtharvaHatekarResume.pdf"
             git push
           else
             echo "No changes to commit"
