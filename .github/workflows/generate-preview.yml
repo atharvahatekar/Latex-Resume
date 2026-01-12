@@ -1,0 +1,41 @@
+on:
+  push:
+    paths:
+      - "resume.pdf"
+      - ".github/workflows/generate-preview.yml"
+  workflow_dispatch:
+
+jobs:
+  generate-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils imagemagick git
+
+      - name: Create preview image (first page)
+        run: |
+          # Convert first page to PNG at 150 DPI
+          pdftoppm -png -f 1 -l 1 -rx 150 -ry 150 resume.pdf resume-preview-temp
+          # pdftoppm names file resume-preview-temp-1.png
+          mv resume-preview-temp-1.png resume-preview.png
+
+      - name: Commit and push preview image if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git status --porcelain | grep -q resume-preview.png; then
+            git add resume-preview.png
+            git commit -m "chore: generate resume-preview.png from resume.pdf"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
