@@ -1,6 +1,6 @@
 # My Resume
 
-[![Resume — First page preview](resume-preview.png)](resume.pdf)
+[![Resume — First page preview](resume-preview.png)](AtharvaHatekarResume.pdf)
 
 View or download:
 - View on GitHub: [Resume PDF](./resume.pdf)
