@@ -1,7 +1,7 @@
 on:
   push:
     paths:
-      - "resume.pdf"
+      - "AtharvaHatekarResume.pdf"
       - ".github/workflows/generate-preview.yml"
   workflow_dispatch:
 
