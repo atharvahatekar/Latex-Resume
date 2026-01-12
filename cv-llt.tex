@@ -1,0 +1,65 @@
+\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+\usepackage{enumitem}
+
+
+% Most commands and style definitions are in settings.sty.
+\usepackage{settings}
+\usepackage{enumitem}
+
+
+
+
+% Change the fonts if you want
+\ifxetexorluatex 
+  \usepackage{fontspec} 
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage[medium,bold]{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\else % If you're using pdfLaTeX or latex
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+%% Photo is only shown if "fullonly" is included
+\includecomment{fullonly}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftheader{%
+  {\LARGE\bfseries\sffamily ATHARVA HATEKAR} \vspace{0.5em} \\
+  \makefield{\faMobile}{+49 15758905132}
+  \makefield{\faEnvelope[regular]}{\href{mailto:atharva_hatekar@yahoo.in}{\texttt{atharva\_hatekar@yahoo.in}}}
+  \makefield{\faMapMarker}{Cottbus, Germany}
+  
+  \makefield{\faLinkedin}{\href{https://www.linkedin.com/in/atharvahatekar}{\texttt{atharvahatekar}}} 
+  \makefield{\faGithub}{\href{https://github.com/atharvahatekar}{\texttt{atharvahatekar}}}
+  \makefield{\faGlobe}{\href{https://atharvahatekar.netlify.app/}{Portfolio}}
+}
+
+\rightheader{~}
+\begin{fullonly}
+\photo[r]{photo}
+\photoscale{0.17}
+\end{fullonly}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\makeheaders[c]
+
+% Summary Section
+\par\noindent\textbf {Data Scientist \& AI Engineer} with 3+ years of experience working on industrial, time-series, and unstructured data. Strong expertise in unsupervised anomaly detection, predictive maintenance, and production-grade Generative AI systems. Proven ability to build end-to-end machine learning solutions—from data preprocessing and feature engineering to deployment using modern MLOps practices.
+
+
+\vspace{0.5em}
+
+\makerubric{employment}
+\makerubric{education}
+\makerubric{skills}
+\makerubric{projects}
+\makerubric{publications}
+\makerubric{languages}
+
+\end{document}
