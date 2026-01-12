@@ -22,7 +22,7 @@ jobs:
       - name: Create preview image (first page)
         run: |
           # Convert first page to PNG at 150 DPI
-          pdftoppm -png -f 1 -l 1 -rx 150 -ry 150 resume.pdf resume-preview-temp
+          pdftoppm -png -f 1 -l 1 -rx 150 -ry 150 AtharvaHatekarResume.pdf resume-preview-temp
           # pdftoppm names file resume-preview-temp-1.png
           mv resume-preview-temp-1.png resume-preview.png
 
