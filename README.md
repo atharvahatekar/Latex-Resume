@@ -1,3 +1,3 @@
 # My Resume
 View or download:
-- View on GitHub: [Resume PDF](./resume.pdf)
+- View on GitHub: [Resume PDF](./AtharvaHatekarResume.pdf)
